@@ -34,8 +34,9 @@ export default function CreatePostScreen() {
       quality: 1,
     });
 
-    if (!result.cancelled) {
-      setMedia(result);
+    // Check using the new API structure (property "canceled" and "assets" array)
+    if (!result.canceled && result.assets && result.assets.length > 0) {
+      setMedia(result.assets[0]);
     }
   };
 
@@ -96,8 +97,7 @@ export default function CreatePostScreen() {
           {media.type === 'image' ? (
             <Image source={{ uri: media.uri }} style={styles.mediaImage} />
           ) : (
-            // For video, you might display a thumbnail or a simple text note.
-            <Text style={styles.videoText}>Video Selecte</Text>
+            <Text style={styles.videoText}>Video Selected</Text>
           )}
         </View>
       )}

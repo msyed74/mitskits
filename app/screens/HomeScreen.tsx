@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 
 export default function HomeScreen() {
+  
   const [posts, setPosts] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
 

@@ -10,6 +10,7 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
+
 export default function ProfileScreen() {
   const navigation = useNavigation();
 
@@ -39,7 +40,7 @@ export default function ProfileScreen() {
 
   // Handler functions for navigation or actions.
   const handleEditProfile = () => {
-    navigation.navigate('EditProfile');
+    navigation.navigate('Edit Profile');
   };
 
   const handleSettings = () => {
