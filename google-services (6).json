@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "402153228611",
+    "project_id": "mitskit-9efd1",
+    "storage_bucket": "mitskit-9efd1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402153228611:android:173763655c5be2bbeac7f6",
+        "android_client_info": {
+          "package_name": "com.syed.mitskit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402153228611-ubo2k2j1bj8hic5lvlkv1sg1uv8elcd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhbrWjV-Dhur3h1Rokl3mmtRT_EquDX_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402153228611-ubo2k2j1bj8hic5lvlkv1sg1uv8elcd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
