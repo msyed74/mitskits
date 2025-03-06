@@ -2,7 +2,6 @@ import React from 'react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './navigation/AppNavigator';
-import BottomTabNavigator from './navigation/BottomTabNavigator';
 
 export default function App() {
   return (

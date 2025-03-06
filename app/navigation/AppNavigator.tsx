@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
-import auth from '@react-native-firebase/auth';
 
-// Import Screens
-import LoginScreen from '../screens/LoginScreen';
+
 import HomeScreen from '../screens/HomeScreen';
 import InboxScreen from '../screens/InboxScreen';
 import AlumniCellScreen from '../screens/AlumniCellScreen';
@@ -33,38 +31,15 @@ function DrawerNavigator() {
   );
 }
 
-// Stack Navigator (Handles routes based on auth state)
+// Stack Navigator (Handles all routes)
 export default function AppNavigator() {
-  const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState(null);
-
-  // Listen for authentication state changes.
-  useEffect(() => {
-    const subscriber = auth().onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
-      if (initializing) setInitializing(false);
-    });
-    return subscriber; // unsubscribe on unmount
-  }, [initializing]);
-
-  // Optionally, render a loading indicator while checking auth state.
-  if (initializing) return null;
-
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {user ? (
-          // User is signed in: show main drawer and additional screens.
-          <>
-            <Stack.Screen name="Main" component={DrawerNavigator} />
-            <Stack.Screen name="Profile" component={ProfileScreen} />
-            <Stack.Screen name="Edit Profile" component={EditProfileScreen} />
-            <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ gestureEnabled: false }} />
-          </>
-        ) : (
-          // User is not signed in: show the login screen.
-          <Stack.Screen name="Login" component={LoginScreen} />
-        )}
+        <Stack.Screen name="Main" component={DrawerNavigator} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Edit Profile" component={EditProfileScreen} />
+        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ gestureEnabled: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
