@@ -4,6 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import CreatePostScreen from '../screens/CreatePostScreen';
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -21,11 +22,17 @@ export default function BottomTabNavigator() {
         component={SearchScreen} 
         options={{ tabBarIcon: ({ color }) => <Ionicons name="search-outline" size={24} color={color} /> }} 
       />
+       <Tab.Screen 
+        name="Create Post" 
+        component={CreatePostScreen} 
+        options={{ tabBarIcon: ({ color }) => <Ionicons name="add-circle-outline" size={24} color={color} /> }} 
+      />
       <Tab.Screen 
         name="Notifications" 
         component={NotificationScreen} 
         options={{ tabBarIcon: ({ color }) => <Ionicons name="notifications-outline" size={24} color={color} /> }} 
       />
+     
       <Tab.Screen 
         name="Profile" 
         component={ProfileScreen} 

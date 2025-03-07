@@ -1,10 +1,14 @@
 // src/components/CustomDrawerContent.tsx
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { 
+  DrawerContentScrollView, 
+  DrawerItemList, 
+  DrawerContentComponentProps 
+} from '@react-navigation/drawer';
 import AgendaCalendar from '../screens/AgendaCalendar';
 
-const CustomDrawerContent: React.FC<any> = (props) => {
+const CustomDrawerContent: React.FC<DrawerContentComponentProps> = (props) => {
   return (
     <DrawerContentScrollView {...props}>
       {/* Calendar is displayed at the top */}

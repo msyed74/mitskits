@@ -1,7 +1,6 @@
-// DrawerNavigator.tsx
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Image, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -12,22 +11,20 @@ import ProfileScreen from '../screens/ProfileScreen';
 import NotificationScreen from '../screens/NotificationScreen';
 import SearchScreen from '../screens/SearchScreen';
 import AlumniCellScreen from '../screens/AlumniCellScreen';
-import CreatePostScreen from '../screens/CreatePostScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import HelpScreen from '../screens/HelpScreen';
-
+import AlumniDetailScreen from '../screens/AlumniDetailScreen';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 
-// HeaderRightButton for navigation (unchanged)
-function HeaderRightButton() {
+function HeaderRightButtons() {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Create Post')}
+      onPress={() => navigation.navigate('Inbox')}
       style={{ marginRight: 15 }}
     >
-      <Ionicons name="add-circle-outline" size={28} color="black" />
+      <Ionicons name="chatbubble-ellipses-outline" size={28} color="black" />
     </TouchableOpacity>
   );
 }
@@ -46,7 +43,7 @@ export default function DrawerNavigator() {
           />
         ),
         headerTitleAlign: 'center',
-        headerRight: () => <HeaderRightButton />,
+        headerRight: () => <HeaderRightButtons />,
       }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
@@ -57,11 +54,14 @@ export default function DrawerNavigator() {
       <Drawer.Screen name="Inbox" component={InboxScreen} />
       <Drawer.Screen name="Settings" component={SettingsScreen} />
       <Drawer.Screen name="Alumni Cell" component={AlumniCellScreen} />
-      <Drawer.Screen name="Create Post" component={CreatePostScreen} />
+      <Drawer.Screen name="AlumniDetail" component={AlumniDetailScreen} />
       <Drawer.Screen name="Edit Profile" component={EditProfileScreen} />
       <Drawer.Screen name="Help" component={HelpScreen} />
-      {/* Hidden DayEvents screen */}
-      <Drawer.Screen name='DayEvents' component={DayEventsScreen} options={{ drawerItemStyle: { height: 0 } }} />
+      <Drawer.Screen
+        name="DayEvents"
+        component={DayEventsScreen}
+        options={{ drawerItemStyle: { height: 0 } }}
+      />
     </Drawer.Navigator>
   );
 }
