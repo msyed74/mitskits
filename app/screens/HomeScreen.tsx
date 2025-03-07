@@ -3,8 +3,9 @@ import { View, Text, FlatList, StyleSheet, RefreshControl } from 'react-native';
 import PostCard from '../components/PostCard'; // Ensure this path is correct
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function HomeScreen({ navigation }) {
+export default function  HomeScreen({ navigation }) {
   const [posts, setPosts] = useState([]);
   const [refreshing, setRefreshing] = useState(false);
 

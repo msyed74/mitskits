@@ -38,7 +38,7 @@ const StackNavigator =( ) =>{
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer indepent={true}>
       <AppNavigator/>
    </NavigationContainer>
   );
