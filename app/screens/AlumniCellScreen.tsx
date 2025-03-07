@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+
 const alumniList = [
   {
     id: '1',
@@ -82,7 +83,10 @@ export default function AlumniCellScreen() {
       <Text>Batch: {item.batch}</Text>
       <Text>Profession: {item.profession}</Text>
       <TouchableOpacity style={styles.connectButton}>
-        <Text style={styles.buttonText}>Connect</Text>
+
+        <Text style={styles.buttonText} >
+          Connect
+          </Text>
       </TouchableOpacity>
     </TouchableOpacity>
   );

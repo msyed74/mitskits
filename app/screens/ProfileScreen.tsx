@@ -74,7 +74,7 @@ export default function ProfileScreen() {
       </View>
 
       {/* Bio Section */}
-      {user.bio ? (
+      {user.bio ?  (
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Bio</Text>
           <Text style={styles.sectionContent}>{user.bio}</Text>
