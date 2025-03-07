@@ -1,0 +1,6 @@
+
+// Requirements file for the project
+requests
+beautifulsoup4
+selenium
+pytest
